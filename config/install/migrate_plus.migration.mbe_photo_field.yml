@@ -1,0 +1,55 @@
+uuid: 2c9beb51-040e-436f-a91f-9f9dcd61adc1
+langcode: en
+status: true
+dependencies: {  }
+id: mbe_photo_field
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: null
+migration_group: mbe_migrations
+label: 'Import photos of professors'
+source:
+  constants:
+    SOURCE_BASE_PATH: 'http://agaric.com'
+    DRUPAL_FILE_DIRECTORY: 'public://professor_photo'
+  plugin: csv
+  path: ../migrate/mbe_photos.csv
+  header_row_count: 1
+  keys:
+    - 'Professor ID'
+process:
+  destination_filename:
+    -
+      plugin: callback
+      callable: basename
+      source: 'Photo URL'
+    -
+      plugin: skip_on_empty
+      method: row
+  destination_full_path:
+    -
+      plugin: concat
+      delimiter: /
+      source:
+        - constants/DRUPAL_FILE_DIRECTORY
+        - '@destination_filename'
+    -
+      plugin: urlencode
+  source_full_path:
+    -
+      plugin: concat
+      delimiter: /
+      source:
+        - constants/SOURCE_BASE_PATH
+        - 'Photo URL'
+    -
+      plugin: urlencode
+  uri:
+    plugin: file_copy
+    source:
+      - '@source_full_path'
+      - '@destination_full_path'
+destination:
+  plugin: 'entity:file'
+migration_dependencies: null

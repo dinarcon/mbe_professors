@@ -1,0 +1,9 @@
+uuid: 86f5fd40-e2b4-4caa-926e-379fd8bfcfd6
+langcode: en
+status: true
+dependencies: {  }
+name: Department
+vid: mbe_department_vocabulary
+description: ''
+hierarchy: 0
+weight: 0

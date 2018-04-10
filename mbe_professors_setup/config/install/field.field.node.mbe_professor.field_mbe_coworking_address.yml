@@ -1,0 +1,35 @@
+uuid: 2212d7ae-caef-4619-b43c-31d14cf9262c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_mbe_coworking_address
+    - node.type.mbe_professor
+  module:
+    - address
+id: node.mbe_professor.field_mbe_coworking_address
+field_name: field_mbe_coworking_address
+entity_type: node
+bundle: mbe_professor
+label: 'Coworking space address'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  available_countries: {  }
+  fields:
+    administrativeArea: administrativeArea
+    locality: locality
+    postalCode: postalCode
+    addressLine1: addressLine1
+    dependentLocality: '0'
+    sortingCode: '0'
+    addressLine2: '0'
+    organization: '0'
+    givenName: '0'
+    additionalName: '0'
+    familyName: '0'
+  langcode_override: ''
+field_type: address

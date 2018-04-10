@@ -1,0 +1,33 @@
+uuid: 79fbbb2e-0db3-4cb5-bba6-cb9b2ccd3138
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.mbe_book.field_mbe_author
+    - field.field.paragraph.mbe_book.field_mbe_title
+    - paragraphs.paragraphs_type.mbe_book
+id: paragraph.mbe_book.default
+targetEntityType: paragraph
+bundle: mbe_book
+mode: default
+content:
+  field_mbe_author:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_mbe_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

@@ -1,0 +1,29 @@
+uuid: eb29f3b5-c923-4d45-9f80-cc550da0562a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_mbe_department
+    - node.type.mbe_professor
+    - taxonomy.vocabulary.mbe_department_vocabulary
+id: node.mbe_professor.field_mbe_department
+field_name: field_mbe_department
+entity_type: node
+bundle: mbe_professor
+label: Department
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      mbe_department_vocabulary: mbe_department_vocabulary
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

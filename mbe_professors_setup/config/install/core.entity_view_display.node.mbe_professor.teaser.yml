@@ -1,0 +1,18 @@
+uuid: 06a91db7-760d-4293-90ed-931f76fd42d3
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - node.type.mbe_professor
+  module:
+    - user
+id: node.mbe_professor.teaser
+targetEntityType: node
+bundle: mbe_professor
+mode: teaser
+content:
+  links:
+    weight: 100
+    region: content
+hidden: {  }

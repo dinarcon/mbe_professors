@@ -1,0 +1,9 @@
+uuid: 18daefc3-4179-45f2-903f-ef20d6d4d462
+langcode: en
+status: true
+dependencies: {  }
+id: mbe_book
+label: Book
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

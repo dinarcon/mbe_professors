@@ -1,0 +1,21 @@
+name: Professors Example Migration Setup
+type: module
+description: Drupal 8 Migrations by Example Setup. Created by Mauricio Dinarte (@dinarcon). http://bit.ly/migrations-by-example
+package: Migration
+core: 8.x
+hidden: 1
+dependencies:
+  - address:address
+  - drupal:datetime
+  - drupal:image
+  - drupal:migrate
+  - drupal:options
+  - drupal:taxonomy
+  - drupal:text
+  - drupal:views
+  - entity_reference_revisions:entity_reference_revisions
+  - mbe_professors:mbe_professors_setup
+  - migrate_plus:migrate_plus
+  - migrate_source_csv:migrate_source_csv
+  - migrate_tools:migrate_tools
+  - paragraphs:paragraphs

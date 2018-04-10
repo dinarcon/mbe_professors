@@ -1,0 +1,19 @@
+uuid: b8ca9670-4533-4057-8b07-77698b87cbb8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_mbe_author
+    - paragraphs.paragraphs_type.mbe_book
+id: paragraph.mbe_book.field_mbe_author
+field_name: field_mbe_author
+entity_type: paragraph
+bundle: mbe_book
+label: Author
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

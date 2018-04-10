@@ -1,0 +1,17 @@
+uuid: 549de6ad-a8a1-461b-9a5b-5e0c0cd2ec77
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Professor
+type: mbe_professor
+description: 'Example content type for "Drupal 8 Migrations by Example" by Mauricio Dinarte (@dinarcon) http://bit.ly/migrations-by-example'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

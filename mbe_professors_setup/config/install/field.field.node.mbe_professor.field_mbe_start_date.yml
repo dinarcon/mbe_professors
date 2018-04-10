@@ -1,0 +1,21 @@
+uuid: e963f826-321e-4e71-8965-5ba6bbbe3f4e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_mbe_start_date
+    - node.type.mbe_professor
+  module:
+    - datetime
+id: node.mbe_professor.field_mbe_start_date
+field_name: field_mbe_start_date
+entity_type: node
+bundle: mbe_professor
+label: 'Start date'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

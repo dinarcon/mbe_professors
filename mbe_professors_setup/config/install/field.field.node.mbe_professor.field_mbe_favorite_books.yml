@@ -1,0 +1,31 @@
+uuid: 3c0229b3-7426-4abc-ac8a-e7925bf00831
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_mbe_favorite_books
+    - node.type.mbe_professor
+    - paragraphs.paragraphs_type.mbe_book
+  module:
+    - entity_reference_revisions
+id: node.mbe_professor.field_mbe_favorite_books
+field_name: field_mbe_favorite_books
+entity_type: node
+bundle: mbe_professor
+label: 'Favorite books'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      mbe_book: mbe_book
+    target_bundles_drag_drop:
+      mbe_book:
+        enabled: true
+        weight: 2
+field_type: entity_reference_revisions

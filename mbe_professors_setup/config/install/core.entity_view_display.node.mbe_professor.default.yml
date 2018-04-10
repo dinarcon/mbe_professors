@@ -1,0 +1,79 @@
+uuid: c2d95181-110e-491a-9030-d74d7eca8a02
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.mbe_professor.field_mbe_biography
+    - field.field.node.mbe_professor.field_mbe_coworking_address
+    - field.field.node.mbe_professor.field_mbe_department
+    - field.field.node.mbe_professor.field_mbe_favorite_books
+    - field.field.node.mbe_professor.field_mbe_photo
+    - field.field.node.mbe_professor.field_mbe_start_date
+    - node.type.mbe_professor
+  module:
+    - address
+    - datetime
+    - entity_reference_revisions
+    - image
+    - text
+    - user
+id: node.mbe_professor.default
+targetEntityType: node
+bundle: mbe_professor
+mode: default
+content:
+  field_mbe_biography:
+    weight: 2
+    label: visually_hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_mbe_coworking_address:
+    weight: 5
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: address_default
+    region: content
+  field_mbe_department:
+    weight: 3
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_mbe_favorite_books:
+    type: entity_reference_revisions_entity_view
+    weight: 6
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_mbe_photo:
+    weight: 1
+    label: visually_hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_mbe_start_date:
+    weight: 4
+    label: inline
+    settings:
+      timezone_override: America/Managua
+      format_type: html_date
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

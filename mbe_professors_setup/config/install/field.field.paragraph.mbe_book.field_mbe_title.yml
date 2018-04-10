@@ -1,0 +1,19 @@
+uuid: 2599afb9-9cf9-4770-924a-24a1d344b428
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_mbe_title
+    - paragraphs.paragraphs_type.mbe_book
+id: paragraph.mbe_book.field_mbe_title
+field_name: field_mbe_title
+entity_type: paragraph
+bundle: mbe_book
+label: Title
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,10 @@
+uuid: 3182b2b9-5a4c-4431-9a2a-e3d7060975e0
+langcode: en
+status: true
+dependencies: {  }
+id: mbe_migrations
+label: 'Drupal 8 Migrations by Example'
+description: ''
+source_type: ''
+module: null
+shared_configuration: null

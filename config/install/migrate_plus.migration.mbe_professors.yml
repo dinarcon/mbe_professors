@@ -1,0 +1,79 @@
+uuid: 83320ad5-e7e3-4512-995d-664c4a1673b2
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - mbe_professors
+id: mbe_professors
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: null
+migration_group: mbe_migrations
+label: 'Import professors'
+source:
+  plugin: csv
+  path: ../migrate/mbe_professors.csv
+  header_row_count: 1
+  keys:
+    - 'Professor ID'
+process:
+  type:
+    plugin: default_value
+    default_value: mbe_professor
+  title:
+    plugin: concat
+    source:
+      - 'First Name'
+      - 'Last Name'
+    delimiter: ' '
+  field_mbe_biography/value: Biography
+  field_mbe_biography/format:
+    plugin: default_value
+    default_value: basic_html
+  field_mbe_department:
+    plugin: entity_generate
+    source: Department
+    entity_type: taxonomy_term
+    bundle: mbe_department_vocabulary
+    value_key: name
+    bundle_key: vid
+  field_mbe_photo/target_id:
+    plugin: migration_lookup
+    migration: mbe_photo_field
+    source: 'Professor ID'
+  field_mbe_photo/alt:
+    plugin: default_value
+    default_value: 'Professor headshot'
+  mbe_book_paragraph:
+    plugin: migration
+    migration: mbe_book_paragraph
+    source: 'Professor ID'
+  field_mbe_favorite_books:
+    plugin: iterator
+    source:
+      - '@mbe_book_paragraph'
+    process:
+      target_id: '0'
+      target_revision_id: '1'
+  field_mbe_start_date:
+    plugin: format_date
+    source: Date
+    from_format: 'F d, Y'
+    to_format: Y-m-d
+    timezone: America/Managua
+  field_mbe_coworking_address/address_line1:
+    plugin: default_value
+    default_value: 'It is a secret ;)'
+  field_mbe_coworking_address/locality: City
+  field_mbe_coworking_address/administrative_area: State
+  field_mbe_coworking_address/postal_code: ZIP
+  field_mbe_coworking_address/country_code: 'Country Code'
+destination:
+  plugin: 'entity:node'
+migration_dependencies:
+  required:
+    - mbe_photo_field
+    - mbe_book_paragraph
+  optional: {  }
