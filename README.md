@@ -43,7 +43,7 @@ This demo includes 3 migration configurations.
 
 ## Instructions
 
-* Install dependencies (composer command: `composer require drupal/paragraphs drupal/address drupal/migrate_plus drupal/migrate_source_csv drupal/migrate_tools`)
+* Install dependencies (composer command: `composer require 'drupal/paragraphs:^1.3' 'drupal/address:^1.4' 'drupal/migrate_plus:^4.0' 'drupal/migrate_source_csv:^2.2' 'drupal/migrate_tools:^4.0'`)
 * Download demo into /modules/custom directory.
 * Enable module.
 * Run migrations using the UI or drush.
