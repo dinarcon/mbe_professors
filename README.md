@@ -28,11 +28,40 @@ This can be accomplished starting a project using the https://github.com/drupal-
 |-- composer.lock
 |-- config
 |-- migrate
+|   |-- mbe_book_paragraph.csv
+|   |-- mbe_photos.csv
+|   `-- mbe_professors.csv
 |-- vendor
 `-- web
+    |-- autoload.php
+    |-- core
+    |-- index.php
+    |-- modules
+    |   |-- contrib
+    |   |   |-- address
+    |   |   |-- entity_reference_revisions
+    |   |   |-- migrate_plus
+    |   |   |-- migrate_source_csv
+    |   |   |-- migrate_tools
+    |   |   `-- paragraphs
+    |   `-- custom
+    |       `-- mbe_professors
+    |-- profiles
+    |-- robots.txt
+    |-- sites
+    |-- themes
+    |-- update.php
+    `-- web.config
 ``` 
 
-If you want to place the files in a different location, you need to update the path in the corresponding configuration files.
+Not having the source CSV files in the proper location would trigger and error similar to:
+
+```
+[error]  Migration failed with source plugin exception: File path (../migrate/mbe_book_paragraph.csv) does not exist.
+```
+
+If you want to place the files in a different location, you need to update the path in the corresponding configuration files. That is the `source:path` setting in the `migrate_plus.migration.*.yml` files.
+
 ## Examples
 
 This demo includes 3 migration configurations.
