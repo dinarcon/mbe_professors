@@ -18,7 +18,7 @@ The following projects are required to run this demo. The version number indicat
 
 ## CSV files location
 
-This demo assumes that the CSV files provided in the `sources` folder are moved to a `migrate` folder in the same level where the Druapl configuration lives.
+This demo assumes that the CSV files provided in the `sources` folder are moved to a `migrate` folder in the same level where the Drupal configuration lives.
 
 This can be accomplished starting a project using the https://github.com/drupal-composer/drupal-project template and creating `migrate` folder. This would look similar to:
 
