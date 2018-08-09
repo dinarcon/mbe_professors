@@ -16,6 +16,22 @@ The following projects are required to run this demo. The version number indicat
 * [Migrate tools](https://www.drupal.org/project/migrate_tools) 8.x-4.0-beta3
 * [Paragraphs](https://www.drupal.org/project/paragraphs) 8.x-1.3
 
+## Examples
+
+This demo includes 3 migration configurations.
+
+* mbe_book_paragraph for importing data into paragraphs entities. There are no dependencies on other migrations.
+* mbe_photo_field for importing data into file entities. There are no dependencies on other migrations.
+* mbe_professors for importing data into node entities. This depend on other migrations to be run before: mbe_book_paragraph and mbe_photo_field.
+
+## Instructions
+
+* Install dependencies (composer command: `composer require 'drupal/paragraphs:^1.3' 'drupal/address:^1.4' 'drupal/migrate_plus:^4.0' 'drupal/migrate_source_csv:^2.2' 'drupal/migrate_tools:^4.0'`)
+* Download demo into /modules/custom directory.
+* Copy the CSV files to the proper location. See instructions below.
+* Enable module.
+* Run migrations using the UI or drush.
+
 ## CSV files location
 
 This demo assumes that the CSV files provided in the `sources` folder are moved to a `migrate` folder in the same level where the Drupal configuration lives.
@@ -61,21 +77,6 @@ Not having the source CSV files in the proper location would trigger and error s
 ```
 
 If you want to place the files in a different location, you need to update the path in the corresponding configuration files. That is the `source:path` setting in the `migrate_plus.migration.*.yml` files.
-
-## Examples
-
-This demo includes 3 migration configurations.
-
-* mbe_book_paragraph for importing data into paragraphs entities. There are no dependencies on other migrations.
-* mbe_photo_field for importing data into file entities. There are no dependencies on other migrations.
-* mbe_professors for importing data into node entities. This depend on other migrations to be run before: mbe_book_paragraph and mbe_photo_field.
-
-## Instructions
-
-* Install dependencies (composer command: `composer require 'drupal/paragraphs:^1.3' 'drupal/address:^1.4' 'drupal/migrate_plus:^4.0' 'drupal/migrate_source_csv:^2.2' 'drupal/migrate_tools:^4.0'`)
-* Download demo into /modules/custom directory.
-* Enable module.
-* Run migrations using the UI or drush.
 
 ### Running the migrations
 
