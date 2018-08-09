@@ -8,13 +8,13 @@ http://bit.ly/migrations-by-example
 
 The following projects are required to run this demo. The version number indicates which version was last used for testing.
  
-* Drupal 8.5.3
-* Address 8.x-1.4
-* Entity reference revisions 8.x-1.5
-* Migrate plus 8.x-4.0-beta3
-* Migrate source csv 8.x-2.2
-* Migrate tools 8.x-4.0-beta3
-* Paragraphs 8.x-1.3
+* [Drupal](https://www.drupal.org/project/drupal) 8.5.3
+* [Address](https://www.drupal.org/project/address) 8.x-1.4
+* [Entity reference revisions](https://www.drupal.org/project/entity_reference_revisions) 8.x-1.5
+* [Migrate plus](https://www.drupal.org/project/migrate_plus) 8.x-4.0-beta3
+* [Migrate source csv](https://www.drupal.org/project/migrate_source_csv) 8.x-2.2
+* [Migrate tools](https://www.drupal.org/project/migrate_tools) 8.x-4.0-beta3
+* [Paragraphs](https://www.drupal.org/project/paragraphs) 8.x-1.3
 
 ## CSV files location
 
