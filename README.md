@@ -29,55 +29,55 @@ This demo includes 3 migration configurations.
 
 * Install dependencies (composer command: `composer require 'drupal/paragraphs:^1.3' 'drupal/address:^1.4' 'drupal/migrate_plus:^4.0' 'drupal/migrate_source_csv:^2.2' 'drupal/migrate_tools:^4.0'`)
 * Download demo into /modules/custom directory.
-* Copy the CSV files to the proper location. See instructions below.
+* Verify that the CSV files are in the proper location. See instructions below.
 * Enable module.
 * Run migrations using the UI or drush.
 
 ## CSV files location
 
-This demo assumes that the CSV files provided in the `sources` folder are moved to a `migrate` folder in the same level where the Drupal configuration lives.
+The `path` configuration for the CSV source plugin accepts an absolute path or relative path from the Drupal installation folder.
 
-This can be accomplished starting a project using the https://github.com/drupal-composer/drupal-project template and creating `migrate` folder. This would look similar to:
+The examples use a relative path and it is assumed that you place this demo module in a `modules/custom` folder. Therefore, the CSV files will be located at `modules/custom/mbe_professors/sources/`.
+
+This would look similar to:
 
 ```
 .
-|-- composer.json
-|-- composer.lock
-|-- config
-|-- migrate
-|   |-- mbe_book_paragraph.csv
-|   |-- mbe_photos.csv
-|   `-- mbe_professors.csv
-|-- vendor
-`-- web
-    |-- autoload.php
-    |-- core
-    |-- index.php
-    |-- modules
-    |   |-- contrib
-    |   |   |-- address
-    |   |   |-- entity_reference_revisions
-    |   |   |-- migrate_plus
-    |   |   |-- migrate_source_csv
-    |   |   |-- migrate_tools
-    |   |   `-- paragraphs
-    |   `-- custom
-    |       `-- mbe_professors
-    |-- profiles
-    |-- robots.txt
-    |-- sites
-    |-- themes
-    |-- update.php
-    `-- web.config
+|-- autoload.php
+|-- core
+|-- index.php
+|-- modules
+|   |-- contrib
+|   |   |-- address
+|   |   |-- entity_reference_revisions
+|   |   |-- migrate_plus
+|   |   |-- migrate_source_csv
+|   |   |-- migrate_tools
+|   |   `-- paragraphs
+|   `-- custom
+|       `-- mbe_professors
+|           |-- composer.json
+|           |-- config
+|           |-- mbe_professors.info.yml
+|           |-- mbe_professors_setup
+|           |-- migrations
+|           |-- README.md
+|           `-- sources
+|-- profiles
+|-- robots.txt
+|-- sites
+|-- themes
+|-- update.php
+`-- web.config
 ``` 
 
 Not having the source CSV files in the proper location would trigger and error similar to:
 
 ```
-[error]  Migration failed with source plugin exception: File path (../migrate/mbe_book_paragraph.csv) does not exist.
+[error]  Migration failed with source plugin exception: File path (modules/custom/mbe_professors/sources/mbe_book_paragraph.csv) does not exist.
 ```
 
-If you want to place the files in a different location, you need to update the path in the corresponding configuration files. That is the `source:path` setting in the `migrate_plus.migration.*.yml` files.
+If you want to place the files in a different location, you need to update the path in the corresponding configuration files. That is the `source:path` setting in the migration files.
 
 ### Running the migrations
 
