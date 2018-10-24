@@ -4,7 +4,7 @@ migration_group: mbe_migrations
 label: 'Import professors (start)'
 source:
   plugin: csv
-  path: ../migrate/mbe_professors.csv
+  path: modules/custom/mbe_professors/sources/mbe_professors.csv
   header_row_count: 1
   keys:
     - 'Professor ID'
