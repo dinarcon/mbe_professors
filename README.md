@@ -91,6 +91,8 @@ drush migrate:import mbe_photo_field
 drush migrate:import mbe_professors
 ```
 
+**Note:** The commands above work for Drush 9. In Drush 8 the command names and aliases are different. Execute `drush list --filter=migrate` to verify the proper commands for your version of Drush.
+
 After the migrations are run successfully, visit /professors to see the content that was imported.
 
 ### Gotcha
@@ -107,3 +109,5 @@ drush migrate:rollback mbe_book_paragraph
 drush migrate:import mbe_book_paragraph
 drush migrate:import mbe_professors
 ```
+
+**Note:** The commands above work for Drush 9. In Drush 8 the command names and aliases are different. Execute `drush list --filter=migrate` to verify the proper commands for your version of Drush.
