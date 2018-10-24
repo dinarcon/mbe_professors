@@ -1,7 +1,10 @@
 uuid: 4d311c5a-1182-4a8f-84a8-d50ce464c97a
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  enforced:
+    module:
+      - mbe_professors
 id: mbe_book_paragraph
 class: null
 field_plugin_method: null
