@@ -47,11 +47,11 @@ process:
     plugin: default_value
     default_value: 'Professor headshot'
   mbe_book_paragraph:
-    plugin: migration
+    plugin: migration_lookup
     migration: mbe_book_paragraph
     source: 'Professor ID'
   field_mbe_favorite_books:
-    plugin: iterator
+    plugin: sub_process
     source:
       - '@mbe_book_paragraph'
     process:
