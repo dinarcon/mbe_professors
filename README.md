@@ -8,13 +8,13 @@ http://bit.ly/migrations-by-example
 
 The following projects are required to run this demo. The version number indicates which version was last used for testing.
  
-* [Drupal](https://www.drupal.org/project/drupal) 8.6.2
+* [Drupal](https://www.drupal.org/project/drupal) 8.6.3
 * [Address](https://www.drupal.org/project/address) 8.x-1.4
-* [Entity reference revisions](https://www.drupal.org/project/entity_reference_revisions) 8.x-1.5
-* [Migrate plus](https://www.drupal.org/project/migrate_plus) 8.x-4.0-beta3
+* [Entity reference revisions](https://www.drupal.org/project/entity_reference_revisions) 8.x-1.6
+* [Migrate plus](https://www.drupal.org/project/migrate_plus) 8.x-4.0
 * [Migrate source csv](https://www.drupal.org/project/migrate_source_csv) 8.x-2.2
-* [Migrate tools](https://www.drupal.org/project/migrate_tools) 8.x-4.0-beta3
-* [Paragraphs](https://www.drupal.org/project/paragraphs) 8.x-1.3
+* [Migrate tools](https://www.drupal.org/project/migrate_tools) 8.x-4.0
+* [Paragraphs](https://www.drupal.org/project/paragraphs) 8.x-1.5
 * [Drush](https://github.com/drush-ops/drush) 9.5.2
 
 ## Examples
@@ -27,7 +27,7 @@ This demo includes 3 migration configurations.
 
 ## Instructions
 
-* Install dependencies via composer: `composer require 'drupal/paragraphs:^1.3' 'drupal/address:^1.4' 'drupal/migrate_plus:^4.0' 'drupal/migrate_source_csv:^2.2' 'drupal/migrate_tools:^4.0'`
+* Install dependencies via composer: `composer require 'drupal/paragraphs:^1.5' 'drupal/address:^1.4' 'drupal/migrate_plus:^4.0' 'drupal/migrate_source_csv:^2.2' 'drupal/migrate_tools:^4.0'`
 * Download demo into /modules/custom directory.
 * Verify that the CSV files are in the proper location. See instructions below.
 * Enable module.

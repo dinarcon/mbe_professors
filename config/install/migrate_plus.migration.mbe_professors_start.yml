@@ -1,3 +1,5 @@
+# Use the following command for CMI to pick up changes made to this file.
+# drush config-import --partial --source=modules/custom/mbe_professors/config/install
 uuid: 3182b2b9-5a4c-4031-9a2a-e3d7010975e0
 id: mbe_professors_start
 migration_group: mbe_migrations
