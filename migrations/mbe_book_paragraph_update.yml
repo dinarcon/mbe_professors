@@ -1,0 +1,47 @@
+# Example of updating paragraphs.
+# Note that it does not create a new revision.
+# Run using the update flag.
+# drush mim mbe_book_paragraph_update --update
+uuid: 4d311c5a-1172-4a5f-34a8-d50ce464c97a
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - mbe_professors
+id: mbe_book_paragraph_update
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: null
+migration_group: mbe_migrations
+label: 'Update book paragraph'
+source:
+  plugin: csv
+  path: modules/custom/mbe_professors/sources/mbe_book_paragraph.csv
+  header_row_count: 1
+  keys:
+    - 'Professor ID'
+process:
+  mbe_book_paragraph:
+    plugin: migration_lookup
+    migration: mbe_book_paragraph
+    source: 'Professor ID'
+  id:
+    plugin: extract
+    source: '@mbe_book_paragraph'
+    index:
+      - 0
+  revision_id:
+    plugin: extract
+    source: '@mbe_book_paragraph'
+    index:
+      - 1
+  field_mbe_author:
+    plugin: callback
+    callable: strtoupper
+    source: Author
+destination:
+  plugin: 'entity_reference_revisions:paragraph'
+  default_bundle: mbe_book
+migration_dependencies: null
