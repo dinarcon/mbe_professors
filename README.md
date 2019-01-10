@@ -2,7 +2,10 @@
 
 A demo module created by [Mauricio Dinarte](https://www.drupal.org/u/dinarcon) ([@dinarcon](https://twitter.com/dinarcon)) to explain migrations concepts in Drupal 8.
 
-http://bit.ly/migrations-by-example
+This module has been used in conference talks to explain migration concetps. Find more information at:
+
+* http://bit.ly/migrations-by-example - Slide deck.
+* https://www.youtube.com/watch?v=eBP2vQIwx-o - Recording. It is old and does not uses the latest code in the repo, but the concepts still apply.
 
 ## Dependencies
 
