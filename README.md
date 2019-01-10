@@ -6,6 +6,7 @@ This module has been used in conference talks to explain migration concetps. Fin
 
 * http://bit.ly/migrations-by-example - Slide deck.
 * https://www.youtube.com/watch?v=eBP2vQIwx-o - Recording. It is old and does not uses the latest code in the repo, but the concepts still apply.
+* https://gist.github.com/dinarcon/72922e8cf634ada47483117ffa659d76 - JSON source migration example.
 
 ## Dependencies
 
