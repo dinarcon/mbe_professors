@@ -12,12 +12,12 @@ This module has been used in conference talks to explain migration concetps. Fin
 
 The following projects are required to run this demo. The version number indicates which version was last used for testing.
  
-* [Drupal](https://www.drupal.org/project/drupal) 8.6.3
+* [Drupal](https://www.drupal.org/project/drupal) 8.6.7
 * [Address](https://www.drupal.org/project/address) 8.x-1.4
 * [Entity reference revisions](https://www.drupal.org/project/entity_reference_revisions) 8.x-1.6
-* [Migrate plus](https://www.drupal.org/project/migrate_plus) 8.x-4.0
+* [Migrate plus](https://www.drupal.org/project/migrate_plus) 8.x-4.1
 * [Migrate source csv](https://www.drupal.org/project/migrate_source_csv) 8.x-2.2
-* [Migrate tools](https://www.drupal.org/project/migrate_tools) 8.x-4.0
+* [Migrate tools](https://www.drupal.org/project/migrate_tools) 8.x-4.1
 * [Paragraphs](https://www.drupal.org/project/paragraphs) 8.x-1.5
 * [Drush](https://github.com/drush-ops/drush) 9.5.2
 
