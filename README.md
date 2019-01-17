@@ -32,7 +32,7 @@ This demo includes 3 migration configurations.
 ## Instructions
 
 * Install dependencies via composer: `composer require 'drupal/paragraphs:^1.5' 'drupal/address:^1.4' 'drupal/migrate_plus:^4.0' 'drupal/migrate_source_csv:^2.2' 'drupal/migrate_tools:^4.0'`
-* Download demo into /modules/custom directory.
+* Download demo into the `/modules/custom` folder of your Drupal installation. You can do this by cloning this repo or [downloading a ZIP file](https://github.com/dinarcon/mbe_professors/archive/master.zip). **Important:** The name of the folder containing the module should be `mbe_professors`. If you get the module from the ZIP file make sure the rename the folder accordingly.
 * Verify that the CSV files are in the proper location. See instructions below.
 * Enable module.
 * Run migrations using the UI or drush.
