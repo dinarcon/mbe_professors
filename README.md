@@ -35,7 +35,7 @@ This demo includes 3 migration configurations.
 * Download demo into the `/modules/custom` folder of your Drupal installation. You can do this by cloning this repo or [downloading a ZIP file](https://github.com/dinarcon/mbe_professors/archive/master.zip). **Important:** The name of the folder containing the module should be `mbe_professors`. If you get the module from the ZIP file make sure the rename the folder accordingly.
 * Verify that the CSV files are in the proper location. See instructions below.
 * Enable module.
-* Run migrations using the UI or drush.
+* Run migrations using drush. See instructions below.
 
 ## CSV files location
 
@@ -85,9 +85,7 @@ If you want to place the files in a different location, you need to update the p
 
 ### Running the migrations
 
-The Migrate Plus module provides a UI and drush commands to run the migrations.
-
-The UI is located at /admin/structure/migrate. Alternatively, the following drush commands can be used:
+The Migrate Tools module provides drush commands to run the migrations.
 
 ```
 drush migrate:import mbe_book_paragraph
