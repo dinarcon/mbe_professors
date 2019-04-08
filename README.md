@@ -12,13 +12,13 @@ This module has been used in conference talks to explain migration concetps. Fin
 
 The following projects are required to run this demo. The version number indicates which version was last used for testing.
  
-* [Drupal](https://www.drupal.org/project/drupal) 8.6.7
-* [Address](https://www.drupal.org/project/address) 8.x-1.4
+* [Drupal](https://www.drupal.org/project/drupal) 8.6.14
+* [Address](https://www.drupal.org/project/address) 8.x-1.6
 * [Entity reference revisions](https://www.drupal.org/project/entity_reference_revisions) 8.x-1.6
 * [Migrate plus](https://www.drupal.org/project/migrate_plus) 8.x-4.1
 * [Migrate source csv](https://www.drupal.org/project/migrate_source_csv) 8.x-2.2
 * [Migrate tools](https://www.drupal.org/project/migrate_tools) 8.x-4.1
-* [Paragraphs](https://www.drupal.org/project/paragraphs) 8.x-1.5
+* [Paragraphs](https://www.drupal.org/project/paragraphs) 8.x-1.8
 * [Drush](https://github.com/drush-ops/drush) 9.5.2
 
 ## Examples
@@ -31,7 +31,7 @@ This demo includes 3 migration configurations.
 
 ## Instructions
 
-* Install dependencies via composer: `composer require 'drupal/paragraphs:^1.5' 'drupal/address:^1.4' 'drupal/migrate_plus:^4.0' 'drupal/migrate_source_csv:^2.2' 'drupal/migrate_tools:^4.0'`
+* Install dependencies via composer: `composer require 'drupal/paragraphs:^1.8' 'drupal/address:^1.6' 'drupal/migrate_plus:^4.1' 'drupal/migrate_source_csv:^2.2' 'drupal/migrate_tools:^4.1'`
 * Download demo into the `/modules/custom` folder of your Drupal installation. You can do this by cloning this repo or [downloading a ZIP file](https://github.com/dinarcon/mbe_professors/archive/master.zip). **Important:** The name of the folder containing the module should be `mbe_professors`. If you get the module from the ZIP file make sure the rename the folder accordingly.
 * Verify that the CSV files are in the proper location. See instructions below.
 * Enable the Professors Example Migration (`mbe_professors`) module.
