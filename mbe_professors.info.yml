@@ -1,4 +1,4 @@
-name: Professors Example Migration
+name: MBE Professors Example Migration
 type: module
 description: Drupal 8 Migrations by Example. Created by Mauricio Dinarte (@dinarcon). http://bit.ly/migrations-by-example
 core: 8.x

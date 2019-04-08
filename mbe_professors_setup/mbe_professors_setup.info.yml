@@ -1,4 +1,4 @@
-name: Professors Example Migration Setup
+name: MBE Professors Example Migration Setup
 type: module
 description: Drupal 8 Migrations by Example Setup. Created by Mauricio Dinarte (@dinarcon). http://bit.ly/migrations-by-example
 package: Migration
