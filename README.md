@@ -33,7 +33,8 @@ This demo includes 3 migration configurations.
 
 * Install module dependencies via composer: `composer require 'drupal/paragraphs:^1.8' 'drupal/address:^1.7' 'drupal/migrate_plus:^4.2' 'drupal/migrate_source_csv:^2.2' 'drupal/migrate_tools:^4.1'`
 * If you do not have Drush available, install the latest version via composer: `composer require drush/drush`. After this step, you may call it via `./vendor/bin/drush`.
-* Download demo into the `/modules/custom` folder of your Drupal installation. You can do this by cloning this repo or [downloading a ZIP file](https://github.com/dinarcon/mbe_professors/archive/master.zip). **Important:** The name of the folder containing the module should be `mbe_professors`. If you get the module from the ZIP file make sure the rename the folder accordingly.
+* Make sure that your Drupal installation has a `/modules/custom` folder. The `modules` folder should exist, but the `custom` sub-folder might not. Create it if needed.
+* Download the demo module contained in this repository into the `/modules/custom` folder. You can do this by cloning this repository or [downloading a ZIP file](https://github.com/dinarcon/mbe_professors/archive/master.zip). **Important:** The name of the folder containing this demo must ve `mbe_professors`. If you get it from the ZIP file the folder might be named `mbe_professors-master`. If that is the case, rename the folder to `mbe_professors` to prevent errors reading the CSV files.
 * Verify that the CSV files are in the proper location. See instructions below.
 * Enable the Professors Example Migration (`mbe_professors`) module.
 * Run migrations using drush. See instructions below.
