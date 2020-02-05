@@ -8,9 +8,6 @@ source:
   ids:
     - 'Professor ID'
 process:
-  type:
-    plugin: default_value
-    default_value: mbe_professor
   title:
     plugin: concat
     source:
@@ -61,6 +58,7 @@ process:
   field_mbe_coworking_address/country_code: 'Country Code'
 destination:
   plugin: 'entity:node'
+  default_bundle: mbe_professor
 migration_dependencies:
   required:
     - mbe_photo_field
