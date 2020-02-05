@@ -1,14 +1,4 @@
-uuid: 83320ad5-e7e3-4512-995d-664c4a1673b2
-langcode: en
-status: true
-dependencies:
-  enforced:
-    module:
-      - mbe_professors
 id: mbe_professors
-class: null
-field_plugin_method: null
-cck_plugin_method: null
 migration_tags: null
 migration_group: mbe_migrations
 label: 'Import professors'
