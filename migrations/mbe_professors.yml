@@ -1,5 +1,7 @@
 id: mbe_professors
-migration_tags: null
+migration_tags:
+  - UD CSV Source
+  - UD Example
 migration_group: mbe_migrations
 label: 'Import professors'
 source:
