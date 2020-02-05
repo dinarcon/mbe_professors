@@ -15,8 +15,7 @@ label: 'Import book paragraph'
 source:
   plugin: csv
   path: modules/custom/mbe_professors/sources/mbe_book_paragraph.csv
-  header_row_count: 1
-  keys:
+  ids:
     - 'Professor ID'
 process:
   field_mbe_title: Title

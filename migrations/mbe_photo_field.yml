@@ -18,8 +18,7 @@ source:
     DRUPAL_FILE_DIRECTORY: 'public://professor_photo'
   plugin: csv
   path: modules/custom/mbe_professors/sources/mbe_photos.csv
-  header_row_count: 1
-  keys:
+  ids:
     - 'Professor ID'
 process:
   source_full_path:
