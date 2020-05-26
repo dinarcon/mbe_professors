@@ -1,10 +1,10 @@
-# Drupal 8 Migrations by Example
+# Drupal 8 and 9 Migrations by Example
 
-A demo module created by [Mauricio Dinarte](https://www.drupal.org/u/dinarcon) ([@dinarcon](https://twitter.com/dinarcon)) to explain migrations concepts in Drupal 8.
+A demo module created by [Mauricio Dinarte](https://www.drupal.org/u/dinarcon) ([@dinarcon](https://twitter.com/dinarcon)) to explain migrations concepts in Drupal.
 
-This module has been used in conference talks to explain migration concetps. Find more information at:
+This module has been used in conference talks to explain migration concepts. Find more information at:
 
-* http://bit.ly/migrations-by-example - Slide deck.
+* https://udrupal.com/migrations-by-example - Slide deck.
 * https://www.youtube.com/watch?v=eBP2vQIwx-o - Recording. It is old and does not uses the latest code in the repo, but the concepts still apply.
 * https://gist.github.com/dinarcon/72922e8cf634ada47483117ffa659d76 - JSON source migration example.
 
@@ -12,14 +12,14 @@ This module has been used in conference talks to explain migration concetps. Fin
 
 The following projects are required to run this demo. The version number indicates which version was last used for testing.
 
-* [Drupal](https://www.drupal.org/project/drupal) 8.8.2
-* [Address](https://www.drupal.org/project/address) 8.x-1.7
-* [Entity reference revisions](https://www.drupal.org/project/entity_reference_revisions) 8.x-1.7
-* [Migrate plus](https://www.drupal.org/project/migrate_plus) 8.x-5.0-rc4
-* [Migrate source csv](https://www.drupal.org/project/migrate_source_csv) 8.x-3.2
-* [Migrate tools](https://www.drupal.org/project/migrate_tools) 8.x-4.5
-* [Paragraphs](https://www.drupal.org/project/paragraphs) 8.x-1.10
-* [Drush](https://github.com/drush-ops/drush) 10.2.0
+* [Drupal](https://www.drupal.org/project/drupal) 9.0.0-rc1
+* [Address](https://www.drupal.org/project/address) 8.x-1.8
+* [Entity reference revisions](https://www.drupal.org/project/entity_reference_revisions) 8.x-1.8
+* [Migrate plus](https://www.drupal.org/project/migrate_plus) 8.x-5.1
+* [Migrate source csv](https://www.drupal.org/project/migrate_source_csv) 8.x-3.4
+* [Migrate tools](https://www.drupal.org/project/migrate_tools) 8.x-5.0
+* [Paragraphs](https://www.drupal.org/project/paragraphs) 8.x-1.12
+* [Drush](https://github.com/drush-ops/drush) 10.2.2
 
 ## Examples
 
@@ -27,14 +27,14 @@ This demo includes 3 migration configurations.
 
 * mbe_book_paragraph for importing data into paragraphs entities. There are no dependencies on other migrations.
 * mbe_photo_field for importing data into file entities. There are no dependencies on other migrations.
-* mbe_professors for importing data into node entities. This depend on other migrations to be run before: mbe_book_paragraph and mbe_photo_field.
+* mbe_professors for importing data into node entities. This depends on other migrations to be run before: mbe_book_paragraph and mbe_photo_field.
 
 ## Instructions
 
-* Install module dependencies via composer: `composer require 'drupal/paragraphs:^1.10' 'drupal/address:^1.7' 'drupal/migrate_plus:^5.0' 'drupal/migrate_source_csv:^3.2' 'drupal/migrate_tools:^4.5'`
+* Install module dependencies via composer: `composer require 'drupal/address:^1.8' 'drupal/migrate_plus:^5.1' 'drupal/migrate_source_csv:^3.4' 'drupal/migrate_tools:^5.0' 'drupal/paragraphs:^1.12'`
 * If you do not have Drush available, install the latest version via composer: `composer require drush/drush`. After this step, you may call it via `./vendor/bin/drush`.
 * Make sure that your Drupal installation has a `/modules/custom` folder. The `modules` folder should exist, but the `custom` sub-folder might not. Create it if needed.
-* Download the demo module contained in this repository into the `/modules/custom` folder. You can do this by cloning this repository or [downloading a ZIP file](https://github.com/dinarcon/mbe_professors/archive/master.zip). **Important:** The name of the folder containing this demo must ve `mbe_professors`. If you get it from the ZIP file the folder might be named `mbe_professors-master`. If that is the case, rename the folder to `mbe_professors` to prevent errors reading the CSV files.
+* Download the demo module contained in this repository into the `/modules/custom` folder. You can do this by cloning this repository or [downloading a ZIP file](https://github.com/dinarcon/mbe_professors/archive/master.zip). **Important:** The name of the folder containing this demo must ve `mbe_professors`. If you get it from the ZIP file the folder will be named `mbe_professors-master`. If that is the case, rename the folder to `mbe_professors` to prevent errors reading the CSV files.
 * Verify that the CSV files are in the proper location. See instructions below.
 * Enable the Professors Example Migration (`mbe_professors`) module.
 * Run migrations using Drush. See instructions below.

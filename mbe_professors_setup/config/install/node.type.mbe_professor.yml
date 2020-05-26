@@ -10,7 +10,7 @@ third_party_settings:
     parent: ''
 name: Professor
 type: mbe_professor
-description: 'Example content type for "Drupal 8 Migrations by Example" by Mauricio Dinarte (@dinarcon) http://bit.ly/migrations-by-example'
+description: 'Example content type for "Drupal Migrations by Example" by Mauricio Dinarte (@dinarcon) https://udrupal.com/migrations-by-example'
 help: ''
 new_revision: true
 preview_mode: 1

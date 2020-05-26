@@ -1,15 +1,15 @@
 {
   "name": "drupal/mbe_professors",
-  "description": "Drupal 8 Migrations by Example. Created by Mauricio Dinarte (@dinarcon). http://bit.ly/migrations-by-example",
+  "description": "Drupal Migrations by Example. Created by Mauricio Dinarte (@dinarcon). https://udrupal.com/migrations-by-example",
   "type": "drupal-module",
   "license": "GPL-2.0",
   "require": {
-    "drupal/core": "~8",
-    "drupal/address": "^1.7",
-    "drupal/entity_reference_revisions": "^1.7",
-    "drupal/migrate_plus": "^5.0",
-    "drupal/migrate_source_csv": "^3.2",
-    "drupal/migrate_tools": "^4.5",
-    "drupal/paragraphs": "^1.10"
+    "drupal/core": "^8 | ^9",
+    "drupal/address": "^1.8",
+    "drupal/entity_reference_revisions": "^1.8",
+    "drupal/migrate_plus": "^5.1",
+    "drupal/migrate_source_csv": "^3.4",
+    "drupal/migrate_tools": "^5.0",
+    "drupal/paragraphs": "^1.12"
   }
 }

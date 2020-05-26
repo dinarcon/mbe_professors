@@ -1,8 +1,9 @@
 name: MBE Professors Example Migration Setup
 type: module
-description: Drupal 8 Migrations by Example Setup. Created by Mauricio Dinarte (@dinarcon). http://bit.ly/migrations-by-example
+description: Drupal Migrations by Example Setup. Created by Mauricio Dinarte (@dinarcon). https://udrupal.com/migrations-by-example
 package: Migration
 core: 8.x
+core_version_requirement: ^8 || ^9
 hidden: 1
 dependencies:
   - address:address
