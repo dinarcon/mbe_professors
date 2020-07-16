@@ -21,6 +21,7 @@ process:
       source: 'Photo URL'
     - plugin: skip_on_empty
       method: row
+    - plugin: transliteration
 
   destination_full_path:
     plugin: concat
