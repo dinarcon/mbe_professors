@@ -38,10 +38,11 @@ process:
       - 'Photo URL'
 
   uri:
-    plugin: file_copy
+    plugin: download
     source:
       - '@source_full_path'
       - '@destination_full_path'
+    file_exists: 'rename'
 
 destination:
   plugin: 'entity:file'
