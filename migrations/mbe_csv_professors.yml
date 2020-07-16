@@ -64,7 +64,7 @@ process:
   field_mbe_photo/target_id:
     plugin: migration_lookup
     migration: mbe_csv_photo_field
-    source: 'Professor ID'
+    source: Photo
   field_mbe_photo/alt:
     plugin: concat
     source:
@@ -74,7 +74,7 @@ process:
   mbe_book_paragraph:
     plugin: migration_lookup
     migration: mbe_csv_book_paragraph
-    source: 'Professor ID'
+    source: Book
   field_mbe_favorite_books:
     plugin: sub_process
     source:

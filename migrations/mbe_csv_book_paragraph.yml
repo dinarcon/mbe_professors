@@ -8,7 +8,7 @@ source:
   plugin: csv
   path: modules/custom/mbe_professors/sources/mbe_book_paragraph.csv
   ids:
-    - 'Professor ID'
+    - 'Book ID'
 
 process:
   field_mbe_title: Title
