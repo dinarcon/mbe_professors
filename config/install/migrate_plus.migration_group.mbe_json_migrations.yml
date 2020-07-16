@@ -6,7 +6,7 @@ dependencies:
     module:
       - mbe_professors
 
-id: mbe_migrations
+id: mbe_json_migrations
 label: 'Drupal 8 Migrations by Example'
 description: ''
 source_type: ''
