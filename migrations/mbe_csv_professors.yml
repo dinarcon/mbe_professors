@@ -1,4 +1,4 @@
-id: mbe_professors
+id: mbe_csv_professors
 label: 'Import professors'
 migration_tags:
   - UD CSV Source

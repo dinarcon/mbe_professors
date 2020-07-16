@@ -1,4 +1,4 @@
-id: mbe_photo_field
+id: mbe_csv_photo_field
 label: 'Import photos of professors'
 migration_tags:
   - UD CSV Source

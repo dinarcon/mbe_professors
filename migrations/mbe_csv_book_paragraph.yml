@@ -1,4 +1,4 @@
-id: mbe_book_paragraph
+id: mbe_csv_book_paragraph
 label: 'Import book paragraph'
 migration_tags:
   - UD CSV Source
