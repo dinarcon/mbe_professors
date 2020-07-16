@@ -6,6 +6,7 @@ migration_tags:
 
 source:
   constants:
+    TITLE_SUFFIX: '(from CSV)'
     PHOTO_DESCRIPTION_SUFFIX: ' headshot'
     DRUPAL_LINK_TITLE: 'Drupal.org profile'
     GITLAB_LINK_TITLE: 'GitLab profile'
@@ -22,6 +23,7 @@ process:
     source:
       - 'First Name'
       - 'Last Name'
+      - constants/TITLE_SUFFIX
     delimiter: ' '
 
   field_mbe_biography/value: Biography
@@ -61,7 +63,7 @@ process:
 
   field_mbe_photo/target_id:
     plugin: migration_lookup
-    migration: mbe_photo_field
+    migration: mbe_csv_photo_field
     source: 'Professor ID'
   field_mbe_photo/alt:
     plugin: concat
@@ -71,7 +73,7 @@ process:
 
   mbe_book_paragraph:
     plugin: migration_lookup
-    migration: mbe_book_paragraph
+    migration: mbe_csv_book_paragraph
     source: 'Professor ID'
   field_mbe_favorite_books:
     plugin: sub_process
@@ -87,6 +89,6 @@ destination:
 
 migration_dependencies:
   required:
-    - mbe_photo_field
-    - mbe_book_paragraph
+    - mbe_csv_photo_field
+    - mbe_csv_book_paragraph
   optional: {}
