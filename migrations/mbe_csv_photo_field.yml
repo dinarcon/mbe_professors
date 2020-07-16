@@ -23,20 +23,18 @@ process:
       method: row
 
   destination_full_path:
-    - plugin: concat
-      delimiter: /
-      source:
-        - constants/DRUPAL_FILE_DIRECTORY
-        - '@destination_filename'
-    - plugin: urlencode
+    plugin: concat
+    delimiter: /
+    source:
+      - constants/DRUPAL_FILE_DIRECTORY
+      - '@destination_filename'
 
   source_full_path:
-    - plugin: concat
-      delimiter: /
-      source:
-        - constants/SOURCE_BASE_PATH
-        - 'Photo URL'
-    - plugin: urlencode
+    plugin: concat
+    delimiter: /
+    source:
+      - constants/SOURCE_BASE_PATH
+      - 'Photo URL'
 
   uri:
     plugin: file_copy
