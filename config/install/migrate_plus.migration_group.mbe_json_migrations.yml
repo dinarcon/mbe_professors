@@ -7,8 +7,35 @@ dependencies:
       - mbe_professors
 
 id: mbe_json_migrations
-label: 'Drupal 8 Migrations by Example'
+label: 'Drupal Migrations by Example'
 description: ''
 source_type: ''
 module: null
-shared_configuration: null
+
+shared_configuration:
+  dependencies:
+    enforced:
+      module:
+        - mbe_professors
+
+  migration_tags:
+    - UD JSON Source
+    - UD Example
+
+  # If the remote JSON file is not available, you will have to modify this file
+  # and import the configuration afterwards. You can do it this Drush command:
+  # ./vendor/bin/drush --yes config-import --partial --source=modules/custom/mbe_professors/config/install
+  # Alternatively, you can use the configuration development module:
+  # https://www.drupal.org/project/config_devel
+  # Any other approach for managing your site's configuration should also work.
+  # Although not recommended, you can use the single item configuration import
+  # interface available at /admin/config/development/configuration/single/import
+  source:
+    plugin: url
+    # Change the data fetcher to 'file' if the remote JSON file is unavailable.
+    data_fetcher_plugin: http
+    data_parser_plugin: json
+    # Change URL to use a local copy if the remote JSON file is unavailable.
+    # modules/custom/mbe_professors/sources/mbe_professors_data.json
+    urls:
+      - https://udrupal.com/files/mbe_professors_data.json

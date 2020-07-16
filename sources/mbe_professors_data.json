@@ -1,0 +1,116 @@
+{
+  "repository": "https://github.com/dinarcon/mbe_professors",
+  "author": {
+    "name": "Mauricio Dinarte",
+    "online_profiles": {
+      "drupal": "https://www.drupal.org/u/dinarcon",
+      "gitlab": "https://gitlab.com/dinarcon",
+      "github": "https://github.com/dinarcon",
+      "twitter": "https://twitter.com/dinarcon"
+    }
+  },
+  "data": {
+    "mbe_professors": [
+      {
+        "professor_id": 1,
+        "first_name": "Stefan",
+        "last_name": "Freudenberg",
+        "department": "Physics",
+        "date": "July 17, 2006",
+        "address": {
+          "city": "Hamburg",
+          "state": "",
+          "zip": 21073,
+          "country_code": "DE"
+        },
+        "photo": "P01",
+        "book": "B10",
+        "biography": "Part analyst, part troubleshooter, and part troublemaker, Stefan serves as Agaric's <em>network engineer</em>.",
+        "profiles": {
+          "drupal": "https://www.drupal.org/u/stefan-freudenberg",
+          "gitlab": "https://gitlab.com/freudenberg",
+          "twitter": "https://twitter.com/stefansys"
+        }
+      },
+      {
+        "professor_id": 2,
+        "first_name": "Benjamin",
+        "last_name": "Melançon",
+        "department": "Journalism",
+        "date": "August 12, 2008",
+        "address": {
+          "city": "Minneapolis",
+          "state": "MN",
+          "zip": 55111,
+          "country_code": "US"
+        },
+        "photo": "P02",
+        "book": "B20",
+        "biography": "Benjamin lives and works to <strong>connect people, ideas, and resources</strong> so more awesome things happen.",
+        "profiles": {
+          "drupal": "https://www.drupal.org/u/mlncn",
+          "gitlab": "https://gitlab.com/mlncn",
+          "twitter": "https://twitter.com/mlncn"
+        }
+      },
+      {
+        "professor_id": 3,
+        "first_name": "Michele",
+        "last_name": "Metts",
+        "department": "Law",
+        "date": "September 12, 2010",
+        "address": {
+          "city": "Boston",
+          "state": "MA",
+          "zip": "02111",
+          "country_code": "US"
+        },
+        "photo": "P03",
+        "book": "B30",
+        "biography": "Michele Metts has been a involved with <a href='http://drupal.org'>Drupal</a> since 2006.",
+        "profiles": {
+          "drupal": "https://www.drupal.org/u/freescholar",
+          "gitlab": "https://gitlab.com/FreeScholar",
+          "twitter": "https://twitter.com/mickymetts"
+        }
+      }
+    ],
+    "mbe_photos": [
+      {
+        "photo_id": "P01",
+        "photo_url": "sites/default/files/pictures/picture-2-1421176752.jpg"
+      },
+      {
+        "photo_id": "P02",
+        "photo_url": "sites/default/files/pictures/picture-3-1421176784.jpg"
+      },
+      {
+        "photo_id": "P03",
+        "photo_url": "sites/default/files/pictures/picture-15-1421176712.jpg"
+      }
+    ],
+    "mbe_book_paragraphs": [
+      {
+        "book_id": "B10",
+        "book_info": {
+          "title": "The pushcart war",
+          "author": "Jean Merrill"
+        }
+      },
+      {
+        "book_id": "B20",
+        "book_info": {
+          "title": "The definite guide to Drupal 7",
+          "author": "Benjamin Melançon et al."
+        }
+      },
+      {
+        "book_id": "B30",
+        "book_info": {
+          "title": "The five love languages",
+          "author": "Gary Chapman"
+        }
+      }
+    ]
+  }
+}

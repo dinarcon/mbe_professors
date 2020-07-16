@@ -1,0 +1,42 @@
+uuid: b8a943f5-5a51-47e7-ae0f-f858170d610d
+id: mbe_json_book_paragraph
+label: 'Import book paragraphs from JSON'
+migration_group: mbe_json_migrations
+
+# Migration configuration entities might inherit from the migration group.
+# Any configuration defined in the group can be overridden here by
+# re-declaring it and assigning a new value.
+# 'dependencies' are inherited from mbe_json_migrations group.
+# 'migration_tags' are inherited from mbe_json_migrations group.
+
+source:
+  # Nested configuration structures are kept when inherited.
+  # 'plugin' is inherited from mbe_json_migrations group.
+  # 'data_fetcher_plugin' is inherited from mbe_json_migrations group.
+  # 'data_parser_plugin' is inherited from mbe_json_migrations group.
+  # 'urls' are inherited from mbe_json_migrations group.
+
+  # XPath-like selector. The slash (/) at the beginning is optional.
+  item_selector: /data/mbe_book_paragraphs
+
+  fields:
+    - name: src_book_id
+      selector: book_id
+    - name: 'Title'
+      selector: book_info/title
+    - name: 'Author'
+      selector: book_info/author
+
+  ids:
+    src_book_id:
+      type: string
+
+process:
+  field_mbe_title: Title
+  field_mbe_author: Author
+
+destination:
+  plugin: 'entity_reference_revisions:paragraph'
+  default_bundle: mbe_book
+
+migration_dependencies: null

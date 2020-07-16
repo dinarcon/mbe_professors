@@ -1,0 +1,69 @@
+uuid: 22f79547-e4cf-4d35-a14c-eb2a84c7de40
+id: mbe_json_photo_field
+label: 'Import professor photos from JSON'
+migration_group: mbe_json_migrations
+
+# Migration configuration entities might inherit from the migration group.
+# Any configuration defined in the group can be overridden here by
+# re-declaring it and assigning a new value.
+# 'dependencies' are inherited from mbe_json_migrations group.
+# 'migration_tags' are inherited from mbe_json_migrations group.
+
+source:
+  constants:
+    SOURCE_BASE_PATH: 'http://agaric.coop'
+    DRUPAL_FILE_DIRECTORY: 'public://professor_photo'
+
+  # Nested configuration structures are kept when inherited.
+  # 'plugin' is inherited from mbe_json_migrations group.
+  # 'data_fetcher_plugin' is inherited from mbe_json_migrations group.
+  # 'data_parser_plugin' is inherited from mbe_json_migrations group.
+  # 'urls' are inherited from mbe_json_migrations group.
+
+  # XPath-like selector. The slash (/) at the beginning is optional.
+  item_selector: /data/mbe_photos
+
+  fields:
+    - name: src_photo_id
+      selector: photo_id
+    - name: 'Photo URL'
+      selector: photo_url
+
+  ids:
+    src_photo_id:
+      type: string
+
+process:
+  destination_filename:
+    - plugin: callback
+      callable: basename
+      source: 'Photo URL'
+    - plugin: skip_on_empty
+      method: row
+
+  destination_full_path:
+    - plugin: concat
+      delimiter: /
+      source:
+        - constants/DRUPAL_FILE_DIRECTORY
+        - '@destination_filename'
+    - plugin: urlencode
+
+  source_full_path:
+    - plugin: concat
+      delimiter: /
+      source:
+        - constants/SOURCE_BASE_PATH
+        - 'Photo URL'
+    - plugin: urlencode
+
+  uri:
+    plugin: file_copy
+    source:
+      - '@source_full_path'
+      - '@destination_full_path'
+
+destination:
+  plugin: 'entity:file'
+
+migration_dependencies: null

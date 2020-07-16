@@ -1,0 +1,140 @@
+uuid: 8e392e49-df1a-4931-87e7-73365b50c558
+id: mbe_json_professors
+label: 'Import professor nodes from JSON'
+migration_group: mbe_json_migrations
+
+# Migration configuration entities might inherit from the migration group.
+# Any configuration defined in the group can be overridden here by
+# re-declaring it and assigning a new value.
+# 'dependencies' are inherited from mbe_json_migrations group.
+# 'migration_tags' are inherited from mbe_json_migrations group.
+
+source:
+  constants:
+    TITLE_SUFFIX: '(from JSON)'
+    PHOTO_DESCRIPTION_SUFFIX: ' headshot'
+    DRUPAL_LINK_TITLE: 'Drupal.org profile'
+    GITLAB_LINK_TITLE: 'GitLab profile'
+    TWITTER_LINK_TITLE: 'Twitter profile'
+
+  # Nested configuration structures are kept when inherited.
+  # 'plugin' is inherited from mbe_json_migrations group.
+  # 'data_fetcher_plugin' is inherited from mbe_json_migrations group.
+  # 'data_parser_plugin' is inherited from mbe_json_migrations group.
+  # 'urls' are inherited from mbe_json_migrations group.
+
+  # XPath-like selector. The slash (/) at the beginning is optional.
+  item_selector: /data/mbe_professors
+
+  fields:
+    - name: src_professor_id
+      label: 'Professor ID'
+      selector: professor_id
+    - name: 'First Name'
+      selector: first_name
+    - name: 'Last Name'
+      selector: last_name
+    - name: 'Department'
+      selector: department
+    - name: 'Date'
+      selector: date
+    - name: 'City'
+      selector: address/city
+    - name: 'State'
+      selector: address/state
+    - name: 'ZIP'
+      selector: address/zip
+    - name: 'Country Code'
+      selector: address/country_code
+    - name: 'Photo'
+      selector: photo
+    - name: 'Book'
+      selector: book
+    - name: 'Biography'
+      selector: biography
+    - name: 'Drupal'
+      selector: profiles/drupal
+    - name: 'Gitlab'
+      selector: profiles/gitlab
+    - name: 'Twitter'
+      selector: profiles/twitter
+
+  ids:
+    src_professor_id:
+      type: integer
+
+process:
+  title:
+    plugin: concat
+    source:
+      - 'First Name'
+      - 'Last Name'
+      - constants/TITLE_SUFFIX
+    delimiter: ' '
+
+  field_mbe_biography/value: Biography
+  field_mbe_biography/format:
+    plugin: default_value
+    default_value: basic_html
+
+  field_mbe_social_profiles/0/uri: Drupal
+  field_mbe_social_profiles/0/title: constants/DRUPAL_LINK_TITLE
+  field_mbe_social_profiles/1/uri: Gitlab
+  field_mbe_social_profiles/1/title: constants/GITLAB_LINK_TITLE
+  field_mbe_social_profiles/2/uri: Twitter
+  field_mbe_social_profiles/2/title: constants/TWITTER_LINK_TITLE
+
+  field_mbe_start_date:
+    plugin: format_date
+    source: Date
+    from_format: 'F d, Y'
+    to_format: Y-m-d
+    timezone: America/Managua
+
+  field_mbe_coworking_address/address_line1:
+    plugin: default_value
+    default_value: 'It is a secret ;)'
+  field_mbe_coworking_address/locality: City
+  field_mbe_coworking_address/administrative_area: State
+  field_mbe_coworking_address/postal_code: ZIP
+  field_mbe_coworking_address/country_code: 'Country Code'
+
+  field_mbe_department:
+    plugin: entity_generate
+    source: Department
+    entity_type: taxonomy_term
+    bundle: mbe_department_vocabulary
+    value_key: name
+    bundle_key: vid
+
+  field_mbe_photo/target_id:
+    plugin: migration_lookup
+    migration: mbe_json_photo_field
+    source: Photo
+  field_mbe_photo/alt:
+    plugin: concat
+    source:
+      - '@title'
+      - constants/PHOTO_DESCRIPTION_SUFFIX
+
+  mbe_book_paragraph:
+    plugin: migration_lookup
+    migration: mbe_json_book_paragraph
+    source: Book
+  field_mbe_favorite_books:
+    plugin: sub_process
+    source:
+      - '@mbe_book_paragraph'
+    process:
+      target_id: '0'
+      target_revision_id: '1'
+
+destination:
+  plugin: 'entity:node'
+  default_bundle: mbe_professor
+
+migration_dependencies:
+  required:
+    - mbe_json_photo_field
+    - mbe_json_book_paragraph
+  optional: {}
