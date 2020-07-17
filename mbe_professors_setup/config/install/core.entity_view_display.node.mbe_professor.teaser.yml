@@ -4,6 +4,13 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.mbe_professor.field_mbe_biography
+    - field.field.node.mbe_professor.field_mbe_coworking_address
+    - field.field.node.mbe_professor.field_mbe_department
+    - field.field.node.mbe_professor.field_mbe_favorite_books
+    - field.field.node.mbe_professor.field_mbe_photo
+    - field.field.node.mbe_professor.field_mbe_social_profiles
+    - field.field.node.mbe_professor.field_mbe_start_date
     - node.type.mbe_professor
   module:
     - user
@@ -15,4 +22,11 @@ content:
   links:
     weight: 100
     region: content
-hidden: {  }
+hidden:
+  field_mbe_biography: true
+  field_mbe_coworking_address: true
+  field_mbe_department: true
+  field_mbe_favorite_books: true
+  field_mbe_photo: true
+  field_mbe_social_profiles: true
+  field_mbe_start_date: true

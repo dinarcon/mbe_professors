@@ -1,0 +1,23 @@
+uuid: 65ddff4f-c97c-46f5-b331-6141b818e94d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_mbe_social_profiles
+    - node.type.mbe_professor
+  module:
+    - link
+id: node.mbe_professor.field_mbe_social_profiles
+field_name: field_mbe_social_profiles
+entity_type: node
+bundle: mbe_professor
+label: 'Social profiles'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 1
+field_type: link

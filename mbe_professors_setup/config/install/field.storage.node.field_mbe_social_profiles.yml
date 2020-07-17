@@ -1,0 +1,19 @@
+uuid: 47dbda59-3e29-455a-9bf0-22b0b48da2f4
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - node
+id: node.field_mbe_social_profiles
+field_name: field_mbe_social_profiles
+entity_type: node
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

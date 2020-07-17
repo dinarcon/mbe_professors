@@ -8,6 +8,7 @@ dependencies:
     - field.storage.node.field_mbe_department
     - field.storage.node.field_mbe_favorite_books
     - field.storage.node.field_mbe_photo
+    - field.storage.node.field_mbe_social_profiles
     - field.storage.node.field_mbe_start_date
     - image.style.large
     - node.type.mbe_professor
@@ -17,6 +18,7 @@ dependencies:
     - datetime
     - entity_reference_revisions
     - image
+    - link
     - node
     - text
     - user
@@ -27,7 +29,6 @@ description: ''
 tag: ''
 base_table: node_field_data
 base_field: nid
-core: 8.x
 display:
   default:
     display_plugin: default
@@ -246,6 +247,73 @@ display:
           type: text_default
           settings: {  }
           group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        field_mbe_social_profiles:
+          id: field_mbe_social_profiles
+          table: node__field_mbe_social_profiles
+          field: field_mbe_social_profiles
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: 'Social profiles'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: uri
+          type: link
+          settings:
+            trim_length: 80
+            url_only: false
+            url_plain: false
+            rel: '0'
+            target: '0'
+          group_column: ''
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -519,6 +587,8 @@ display:
           id: status
           expose:
             operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
           group: 1
         type:
           id: type
@@ -529,6 +599,9 @@ display:
           entity_type: node
           entity_field: type
           plugin_id: bundle
+          expose:
+            operator_limit_selection: false
+            operator_list: {  }
       sorts:
         title:
           id: title
@@ -547,7 +620,20 @@ display:
       title: Professors
       header: {  }
       footer: {  }
-      empty: {  }
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: false
+          content:
+            value: "<p>The example module has been installed correctly, but the migrations have not been executed. Run any of the following Drush commands to get the content imported:</p>\r\n\r\n<ul>\r\n  <li>To migrate only from CSV files execute:<br /><code>./vendor/bin/drush migrate:import --tag='UD CSV Source'</code></li>\r\n  <li>To migrate only from JSON files execute:<br /><code>./vendor/bin/drush migrate:import --group='mbe_professors_json_examples'</code></li>\r\n  <li>To migrate from both CSV and JSON files execute:<br /><code>./vendor/bin/drush migrate:import --tag='UD Example'</code></li>\r\n</ul>\r\n\r\n<p>Alternatively, JSON migrations can also be executed from the <a href='/admin/structure/migrate/manage/mbe_professors/migrations' title='JSON Examples migration group administration interface'>administration interface for the JSON Examples migration group</a>.</p>"
+            format: basic_html
+          plugin_id: text
       relationships: {  }
       arguments: {  }
       display_extenders: {  }
@@ -565,6 +651,7 @@ display:
         - 'config:field.storage.node.field_mbe_department'
         - 'config:field.storage.node.field_mbe_favorite_books'
         - 'config:field.storage.node.field_mbe_photo'
+        - 'config:field.storage.node.field_mbe_social_profiles'
         - 'config:field.storage.node.field_mbe_start_date'
   page_1:
     display_plugin: page
@@ -573,7 +660,7 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
-      path: professors
+      path: mbe_professors
       menu:
         type: normal
         title: Professors
@@ -592,4 +679,5 @@ display:
         - 'config:field.storage.node.field_mbe_department'
         - 'config:field.storage.node.field_mbe_favorite_books'
         - 'config:field.storage.node.field_mbe_photo'
+        - 'config:field.storage.node.field_mbe_social_profiles'
         - 'config:field.storage.node.field_mbe_start_date'
