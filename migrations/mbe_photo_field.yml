@@ -15,14 +15,6 @@ source:
     - 'Professor ID'
 
 process:
-  source_full_path:
-    - plugin: concat
-      delimiter: /
-      source:
-        - constants/SOURCE_BASE_PATH
-        - 'Photo URL'
-    - plugin: urlencode
-
   destination_filename:
     - plugin: callback
       callable: basename
@@ -36,6 +28,14 @@ process:
       source:
         - constants/DRUPAL_FILE_DIRECTORY
         - '@destination_filename'
+    - plugin: urlencode
+
+  source_full_path:
+    - plugin: concat
+      delimiter: /
+      source:
+        - constants/SOURCE_BASE_PATH
+        - 'Photo URL'
     - plugin: urlencode
 
   uri:

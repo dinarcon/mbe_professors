@@ -23,6 +23,21 @@ process:
     plugin: default_value
     default_value: basic_html
 
+  field_mbe_start_date:
+    plugin: format_date
+    source: Date
+    from_format: 'F d, Y'
+    to_format: Y-m-d
+    timezone: America/Managua
+
+  field_mbe_coworking_address/address_line1:
+    plugin: default_value
+    default_value: 'It is a secret ;)'
+  field_mbe_coworking_address/locality: City
+  field_mbe_coworking_address/administrative_area: State
+  field_mbe_coworking_address/postal_code: ZIP
+  field_mbe_coworking_address/country_code: 'Country Code'
+
   field_mbe_department:
     plugin: entity_generate
     source: Department
@@ -50,21 +65,6 @@ process:
     process:
       target_id: '0'
       target_revision_id: '1'
-
-  field_mbe_start_date:
-    plugin: format_date
-    source: Date
-    from_format: 'F d, Y'
-    to_format: Y-m-d
-    timezone: America/Managua
-
-  field_mbe_coworking_address/address_line1:
-    plugin: default_value
-    default_value: 'It is a secret ;)'
-  field_mbe_coworking_address/locality: City
-  field_mbe_coworking_address/administrative_area: State
-  field_mbe_coworking_address/postal_code: ZIP
-  field_mbe_coworking_address/country_code: 'Country Code'
 
 destination:
   plugin: 'entity:node'
