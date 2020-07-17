@@ -6,7 +6,7 @@ migration_tags:
 
 source:
   constants:
-    SOURCE_BASE_PATH: 'http://agaric.com'
+    SOURCE_BASE_PATH: 'http://agaric.coop'
     DRUPAL_FILE_DIRECTORY: 'public://professor_photo'
 
   plugin: csv
