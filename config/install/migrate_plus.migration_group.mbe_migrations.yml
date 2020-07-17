@@ -5,6 +5,7 @@ dependencies:
   enforced:
     module:
       - mbe_professors
+
 id: mbe_migrations
 label: 'Drupal 8 Migrations by Example'
 description: ''

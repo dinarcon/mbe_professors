@@ -1,48 +1,50 @@
 id: mbe_photo_field
+label: 'Import photos of professors'
 migration_tags:
   - UD CSV Source
   - UD Example
-label: 'Import photos of professors'
+
 source:
   constants:
     SOURCE_BASE_PATH: 'http://agaric.com'
     DRUPAL_FILE_DIRECTORY: 'public://professor_photo'
+
   plugin: csv
   path: modules/custom/mbe_professors/sources/mbe_photos.csv
   ids:
     - 'Professor ID'
+
 process:
   source_full_path:
-    -
-      plugin: concat
+    - plugin: concat
       delimiter: /
       source:
         - constants/SOURCE_BASE_PATH
         - 'Photo URL'
-    -
-      plugin: urlencode
+    - plugin: urlencode
+
   destination_filename:
-    -
-      plugin: callback
+    - plugin: callback
       callable: basename
       source: 'Photo URL'
-    -
-      plugin: skip_on_empty
+    - plugin: skip_on_empty
       method: row
+
   destination_full_path:
-    -
-      plugin: concat
+    - plugin: concat
       delimiter: /
       source:
         - constants/DRUPAL_FILE_DIRECTORY
         - '@destination_filename'
-    -
-      plugin: urlencode
+    - plugin: urlencode
+
   uri:
     plugin: file_copy
     source:
       - '@source_full_path'
       - '@destination_full_path'
+
 destination:
   plugin: 'entity:file'
+
 migration_dependencies: null

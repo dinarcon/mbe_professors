@@ -1,13 +1,15 @@
 id: mbe_professors
+label: 'Import professors'
 migration_tags:
   - UD CSV Source
   - UD Example
-label: 'Import professors'
+
 source:
   plugin: csv
   path: modules/custom/mbe_professors/sources/mbe_professors.csv
   ids:
     - 'Professor ID'
+
 process:
   title:
     plugin: concat
@@ -15,10 +17,12 @@ process:
       - 'First Name'
       - 'Last Name'
     delimiter: ' '
+
   field_mbe_biography/value: Biography
   field_mbe_biography/format:
     plugin: default_value
     default_value: basic_html
+
   field_mbe_department:
     plugin: entity_generate
     source: Department
@@ -26,6 +30,7 @@ process:
     bundle: mbe_department_vocabulary
     value_key: name
     bundle_key: vid
+
   field_mbe_photo/target_id:
     plugin: migration_lookup
     migration: mbe_photo_field
@@ -33,6 +38,7 @@ process:
   field_mbe_photo/alt:
     plugin: default_value
     default_value: 'Professor headshot'
+
   mbe_book_paragraph:
     plugin: migration_lookup
     migration: mbe_book_paragraph
@@ -44,12 +50,14 @@ process:
     process:
       target_id: '0'
       target_revision_id: '1'
+
   field_mbe_start_date:
     plugin: format_date
     source: Date
     from_format: 'F d, Y'
     to_format: Y-m-d
     timezone: America/Managua
+
   field_mbe_coworking_address/address_line1:
     plugin: default_value
     default_value: 'It is a secret ;)'
@@ -57,11 +65,13 @@ process:
   field_mbe_coworking_address/administrative_area: State
   field_mbe_coworking_address/postal_code: ZIP
   field_mbe_coworking_address/country_code: 'Country Code'
+
 destination:
   plugin: 'entity:node'
   default_bundle: mbe_professor
+
 migration_dependencies:
   required:
     - mbe_photo_field
     - mbe_book_paragraph
-  optional: {  }
+  optional: {}

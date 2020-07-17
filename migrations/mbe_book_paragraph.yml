@@ -1,17 +1,21 @@
 id: mbe_book_paragraph
+label: 'Import book paragraph'
 migration_tags:
   - UD CSV Source
   - UD Example
-label: 'Import book paragraph'
+
 source:
   plugin: csv
   path: modules/custom/mbe_professors/sources/mbe_book_paragraph.csv
   ids:
     - 'Professor ID'
+
 process:
   field_mbe_title: Title
   field_mbe_author: Author
+
 destination:
   plugin: 'entity_reference_revisions:paragraph'
   default_bundle: mbe_book
+
 migration_dependencies: null
