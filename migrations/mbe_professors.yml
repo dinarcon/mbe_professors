@@ -6,9 +6,10 @@ migration_tags:
 
 source:
   constants:
-    DRUPAL_LINK_TITLE: "Drupal.org profile"
-    GITLAB_LINK_TITLE: "GitLab profile"
-    TWITTER_LINK_TITLE: "Twitter profile"
+    PHOTO_DESCRIPTION_SUFFIX: ' headshot'
+    DRUPAL_LINK_TITLE: 'Drupal.org profile'
+    GITLAB_LINK_TITLE: 'GitLab profile'
+    TWITTER_LINK_TITLE: 'Twitter profile'
 
   plugin: csv
   path: modules/custom/mbe_professors/sources/mbe_professors.csv
@@ -63,8 +64,10 @@ process:
     migration: mbe_photo_field
     source: 'Professor ID'
   field_mbe_photo/alt:
-    plugin: default_value
-    default_value: 'Professor headshot'
+    plugin: concat
+    source:
+      - '@title'
+      - constants/PHOTO_DESCRIPTION_SUFFIX
 
   mbe_book_paragraph:
     plugin: migration_lookup
