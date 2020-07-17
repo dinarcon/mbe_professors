@@ -5,6 +5,11 @@ migration_tags:
   - UD Example
 
 source:
+  constants:
+    DRUPAL_LINK_TITLE: "Drupal.org profile"
+    GITLAB_LINK_TITLE: "GitLab profile"
+    TWITTER_LINK_TITLE: "Twitter profile"
+
   plugin: csv
   path: modules/custom/mbe_professors/sources/mbe_professors.csv
   ids:
@@ -22,6 +27,13 @@ process:
   field_mbe_biography/format:
     plugin: default_value
     default_value: basic_html
+
+  field_mbe_social_profiles/0/uri: Drupal
+  field_mbe_social_profiles/0/title: constants/DRUPAL_LINK_TITLE
+  field_mbe_social_profiles/1/uri: Gitlab
+  field_mbe_social_profiles/1/title: constants/GITLAB_LINK_TITLE
+  field_mbe_social_profiles/2/uri: Twitter
+  field_mbe_social_profiles/2/title: constants/TWITTER_LINK_TITLE
 
   field_mbe_start_date:
     plugin: format_date
