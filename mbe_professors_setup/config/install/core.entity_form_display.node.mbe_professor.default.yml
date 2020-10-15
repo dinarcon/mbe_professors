@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.mbe_professor.field_mbe_department
     - field.field.node.mbe_professor.field_mbe_favorite_books
     - field.field.node.mbe_professor.field_mbe_photo
+    - field.field.node.mbe_professor.field_mbe_social_profiles
     - field.field.node.mbe_professor.field_mbe_start_date
     - image.style.thumbnail
     - node.type.mbe_professor
@@ -15,6 +16,7 @@ dependencies:
     - address
     - datetime
     - image
+    - link
     - paragraphs
     - path
     - text
@@ -73,6 +75,14 @@ content:
     third_party_settings: {  }
     type: image_image
     region: content
+  field_mbe_social_profiles:
+    type: link_default
+    weight: 13
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
   field_mbe_start_date:
     weight: 8
     settings: {  }
